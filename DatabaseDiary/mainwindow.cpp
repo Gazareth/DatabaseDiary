@@ -12,6 +12,12 @@
 #include <QLayout>
 
 
+static const QDir dbdir = QDir::currentPath() + "/Database/";
+
+static const QString dbname = "Diary_Entries.db";
+static const QString tblname = "Entries";
+
+
 void MainWindow::DebugIsDBOpen(QSqlDatabase database, QString from)
 {
     #ifndef QT_DEBUG
@@ -73,10 +79,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::InitialiseDB()
 {
-    //Check for directory
-    const QDir dbdir = QDir::currentPath() + "/database/";
-
-    //Create if it doesn't exist
+    //Create directory if it doesn't exist
     if( !dbdir.exists() )
     {
         dbdir.mkdir(dbdir.absolutePath());

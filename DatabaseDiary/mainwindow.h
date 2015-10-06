@@ -44,8 +44,6 @@ private:
     QTextEdit *textEdit_EntryText;
 
     QSqlDatabase db;
-    const QString dbname = "Diary_Entries.db";
-    const QString tblname = "Entries";
 };
 
 #endif // MAINWINDOW_H
